@@ -7,6 +7,10 @@ class notesModel {
   getNotes() {
     return this.notesList;
   }
+
+  addNote(item) {
+    this.notesList.push(item)
+  }
 }
 
 module.exports = notesModel;
