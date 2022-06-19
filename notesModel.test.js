@@ -11,4 +11,13 @@ describe("Notes", () => {
     notes.addNote('Buy milk');
     expect(notes.getNotes()).toEqual(['Buy milk'])
   })
+
+  it('Adds multiple notes correctly', () => {
+    const notes = new notesModel;
+    notes.addNote('Buy milk');
+    notes.addNote('Hang out the washing');
+    expect(notes.getNotes()).toEqual(['Buy milk', 'Hang out the washing']);
+  })
+
+  
 })
