@@ -19,5 +19,11 @@ describe("Notes", () => {
     expect(notes.getNotes()).toEqual(['Buy milk', 'Hang out the washing']);
   })
 
-  
+  it('Resets the list to empty when reset method is called', () => {
+    const notes = new notesModel;
+    notes.addNote('Buy milk');
+    notes.addNote('Hang out the washing');
+    notes.reset();
+    expect(notes.getNotes()).toEqual([]);
+  })
 })
