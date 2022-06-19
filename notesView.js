@@ -3,6 +3,17 @@ class notesView {
   constructor(model) {
     this.model = model;
     this.mainContainerEl = document.querySelector('#main-container');
+    this.noteInput = document.querySelector('#submit-note-button')
+
+    this.noteInput.addEventListener('click', () => {
+      const note = document.querySelector('#note-text').value;
+      this.submitNote(note);
+    })
+  }
+
+  submitNote(note) {
+    this.model.addNote(note);
+    this.displayNotes();
   }
 
   displayNotes() {
