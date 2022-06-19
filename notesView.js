@@ -24,6 +24,7 @@ class notesView {
       noteEl.className = 'note';
       this.mainContainerEl.append(noteEl);
     })
+    this.model.reset();
   }
 
 }
