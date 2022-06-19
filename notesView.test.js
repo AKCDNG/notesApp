@@ -32,4 +32,24 @@
      // or other things that make sense for your test.
      expect(document.querySelectorAll('div.note').length).toEqual(2);
    });
+
+   it('adds a new note', () => {
+    document.body.innerHTML = fs.readFileSync('./index.html');
+  
+    const model = new notesModel();
+    const view = new notesView(model);
+  
+    // 1. Fill the input
+    const input = document.querySelector('#note-text');
+    input.value = 'My new amazing test note';
+  
+    // 2. Click the button
+    const button = document.querySelector('#submit-note-button');
+    button.click();
+  
+    // 3. The note should be on the page
+    expect(document.querySelectorAll('div.note').length).toEqual(1);
+    expect(document.querySelectorAll('div.note')[0].innerText).toEqual('My new amazing test note');
+  });
+
  });
