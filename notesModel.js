@@ -11,6 +11,10 @@ class notesModel {
   addNote(item) {
     this.notesList.push(item)
   }
+
+  reset () {
+    this.notesList = []
+  }
 }
 
 module.exports = notesModel;
