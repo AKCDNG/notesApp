@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/AKCDNG/notesApp/issues"
   },
-  "homepage": "https://github.com/AKCDNG/notesApp#readme"
+  "homepage": "https://github.com/AKCDNG/notesApp#readme",
+  "dependencies": {
+    "jest": "^28.1.1"
+  }
 }
