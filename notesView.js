@@ -1,7 +1,8 @@
 class notesView {
   
-  constructor(model) {
+  constructor(model, api) {
     this.model = model;
+    this.api = api
     this.mainContainerEl = document.querySelector('#main-container');
     this.noteInput = document.querySelector('#submit-note-button')
 
@@ -26,6 +27,14 @@ class notesView {
     })
     this.model.reset();
   }
+
+    async displayNotesFromApi() {
+    const notes = await this.api.loadNotes();
+    this.model.setNotes(notes);
+    this.displayNotes();
+    }
+
+    
 
 }
 
